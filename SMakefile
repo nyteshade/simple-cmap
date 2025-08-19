@@ -1,0 +1,12 @@
+ODIR = amiga
+FLAGS = IDIR include
+
+all: $(ODIR)/map.o
+
+$(ODIR)/map.o: src/map.c
+  sc $(FLAGS) src/map.c
+  copy src/map.o $(ODIR)/
+  delete src/map.(o|q)
+
+clean:
+  delete $(ODIR)/#?
